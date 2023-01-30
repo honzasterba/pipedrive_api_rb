@@ -103,3 +103,7 @@ Performance/StringInclude:
   Enabled: true
 RSpec/ContextWording:
   Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/SubjectStub:
+  Enabled: false

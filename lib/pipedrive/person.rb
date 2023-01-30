@@ -15,7 +15,7 @@ module Pipedrive
 
       params[:fields] ||= args[1]
       params.delete :fields if params[:fields].blank?
-      return to_enum(:search, params) unless block_given?
+      return to_enum(:search, params) unless block
 
       follow_pagination(:make_api_call, [:get, 'search'], params, &block)
     end

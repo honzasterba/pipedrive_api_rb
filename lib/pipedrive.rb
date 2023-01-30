@@ -42,7 +42,7 @@ module Pipedrive
   reset!
 end
 
-require 'pipedrive/railties' if defined?(::Rails)
+require 'pipedrive/railties' if defined?(Rails)
 
 # Core
 require 'pipedrive/base'
