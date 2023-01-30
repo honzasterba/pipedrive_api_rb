@@ -14,7 +14,7 @@ module Pipedrive
       raise 'term is missing' unless params[:term]
 
       params[:fields] ||= args[1]
-      return to_enum(:find_by_name, params) unless block_given?
+      return to_enum(:search, params) unless block_given?
 
       follow_pagination(:make_api_call, [:get, 'search'], params, &block)
     end
