@@ -5,13 +5,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'pipedrive/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'pipedrive.rb'
+  gem.name          = 'pipedrive_api_rb'
   gem.version       = Pipedrive::VERSION
-  gem.authors       = ['Alexander Simonov']
-  gem.email         = ['alex@amoniac.eu']
+  gem.authors       = ['Jan Sterba', 'Alexander Simonov']
+  gem.email         = ['info@jansterba.com']
   gem.summary       = 'Pipedrive.com API Wrapper'
   gem.description   = 'Pipedrive.com API Wrapper'
-  gem.homepage      = 'https://github.com/amoniacou/pipedrive.rb'
+  gem.homepage      = 'https://github.com/honzasterba/pipedrive_api_rb'
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files -z`.split("\x0")
@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency('activesupport', '>= 4.0.0')
   gem.add_dependency('faraday')
-  gem.add_dependency('faraday_middleware')
+  gem.add_dependency('faraday-mashify')
   gem.add_dependency('hashie', '>= 3.0')
   gem.add_development_dependency('bundler')
   gem.add_development_dependency('rake', '> 12')

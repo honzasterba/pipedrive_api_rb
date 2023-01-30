@@ -1,7 +1,6 @@
-# Pipedrive
+# Pipedrive Ruby API
 
-[![Build Status](https://travis-ci.org/amoniacou/pipedrive.rb.svg?branch=master)](https://travis-ci.org/amoniacou/pipedrive.rb)
-[![Code Climate](https://codeclimate.com/github/amoniacou/pipedrive.rb.png)](https://codeclimate.com/github/amoniacou/pipedrive.rb)
+[![Build Status](https://app.travis-ci.com/honzasterba/pipedrive_rb.svg?branch=master)](https://app.travis-ci.com/honzasterba/pipedrive_rb)
 
 Pipedrive.com API wrapper
 
@@ -9,7 +8,7 @@ Pipedrive.com API wrapper
 
 Add this line to your application's Gemfile:
 
-    gem 'pipedrive.rb'
+    gem 'pipedrive_api_rb'
 
 And then execute:
 
@@ -17,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install pipedrive.rb
+    $ gem install pipedrive_api_rb
 
 ## Usage
 
@@ -83,8 +82,8 @@ client.each(start: 100).select {|x| x['company_id'] == 12345}
 If you need use only one pipedrive account for whole application, then you can create `config/initializer/pipedrive.rb` file with next content:
 
 ```ruby
-Pipedrive.setup do |n|
-  n.api_token = ENV['PIPEDRIVE_API_TOKEN']
+Pipedrive.setup do |pd|
+  pd.api_token = ENV['PIPEDRIVE_API_TOKEN']
 end
 ```
 
@@ -92,7 +91,7 @@ And you can skip providing `api_token` to the entities classes.
 
 ## Contributing
 
-1. Fork it ( https://github.com/amoniacou/pipedrive/fork )
+1. Fork it ( https://github.com/honzasterba/pipedrive_api_rb/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

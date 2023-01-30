@@ -70,14 +70,12 @@ module Pipedrive
 
     class << self
       def faraday_options
-        {
-          url:     'https://api.pipedrive.com',
+        { url:     'https://api.pipedrive.com',
           headers: {
             accept:       'application/json',
             content_type: 'application/json',
             user_agent:   ::Pipedrive.user_agent
-          }
-        }
+          } }
       end
 
       # This method smells of :reek:TooManyStatements
@@ -87,9 +85,7 @@ module Pipedrive
           conn.request :url_encoded
           conn.response :mashify
           conn.response :json, content_type: /\bjson$/
-          conn.use FaradayMiddleware::ParseJson
           conn.response :logger, ::Pipedrive.logger if ::Pipedrive.debug
-          conn.adapter Faraday.default_adapter
         end
       end
     end
