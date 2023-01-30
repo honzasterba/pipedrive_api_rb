@@ -13,7 +13,7 @@ RSpec.describe ::Pipedrive::Person do
 
   describe '#search' do
     it 'calls #make_api_call with term' do
-      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', fields: nil, :start=>0 })
+      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', :start=>0 })
       expect { |b| subject.search('term', &b) }.to yield_successive_args
     end
 
@@ -23,7 +23,7 @@ RSpec.describe ::Pipedrive::Person do
     end
 
     it 'yields results' do
-      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', fields: nil, start: 0 }).
+      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', start: 0 }).
         and_return(::Hashie::Mash.new(data: [1, 2], success: true))
       expect { |b| subject.search('term', &b) }.to yield_successive_args(1, 2)
     end
