@@ -13,12 +13,12 @@ RSpec.describe ::Pipedrive::Person do
 
   describe '#search' do
     it 'calls #make_api_call with term' do
-      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', fields: nil})
+      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', fields: nil, :start=>0 })
       expect { |b| subject.search('term', &b) }.to yield_successive_args
     end
 
     it 'calls #make_api_call with term and search_by_email' do
-      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', fields: "email" })
+      expect(subject).to receive(:make_api_call).with(:get, 'search', { term: 'term', fields: "email", :start=>0 })
       expect { |b| subject.search('term', "email", &b) }.to yield_successive_args
     end
 
