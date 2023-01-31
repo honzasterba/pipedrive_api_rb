@@ -23,12 +23,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency('faraday')
   gem.add_dependency('faraday-mashify')
   gem.add_dependency('hashie', '>= 3.0')
-  gem.add_development_dependency('bundler')
-  gem.add_development_dependency('rake', '> 12')
-  gem.add_development_dependency('rspec', '>= 3.0')
-  gem.add_development_dependency('rubocop')
-  gem.add_development_dependency('rubocop-performance')
-  gem.add_development_dependency('rubocop-rspec')
-  gem.add_development_dependency('webmock')
   gem.metadata['rubygems_mfa_required'] = 'true'
 end

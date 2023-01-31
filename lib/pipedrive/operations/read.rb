@@ -24,7 +24,7 @@ module Pipedrive
         res
       end
 
-      def find_by_id(id)
+      def find(id)
         make_api_call(:get, id)
       end
     end
